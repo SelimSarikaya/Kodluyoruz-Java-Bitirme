@@ -1,0 +1,7 @@
+
+t
+java:S1192"FDefine a constant instead of duplicating this literal "ADMIN" 4 times.(¤µäHê.RCRITICALZ
+CODE_SMELL
+p
+java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“Hï.RMINORZ
+CODE_SMELL

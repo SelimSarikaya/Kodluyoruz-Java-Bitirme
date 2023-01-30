@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "7df33da5-1338-4e15-899f-4078a7bf9210",
+		"name": "ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24884009"
+	},
+	"item": [
+		{
+			"name": "localhost:9090/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"selim\",\r\n    \"email\": \"selim@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"type\": \"INDIVIDUAL\",\r\n    \"surname\": \"sarikaya\",\r\n    \"sex\": \"MALE\",\r\n    \"telNo\": \"123546897\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/users/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\":\"selim@gmail.com\",\r\n    \"password\": \"123456\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/tickets",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"no\":\"123\",\r\n    \"departureTime\": \"2020-03-12\",\r\n    \"arrivalTime\":\"2020-03-12\",\r\n    \"departureLocation\": \"Ankara\",\r\n    \"arrivalLocation\":\"Denizli\",\r\n    \"transportationType\": \"AIRPLANE\",\r\n    \"ticketCost\": 200.0\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/admin/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"admin",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/tickets/bus",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/tickets/airplane",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"tickets",
+						"airplane"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/tickets/departureTime/2020-03-12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/tickets/departureTime/2020-03-12",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"tickets",
+						"departureTime",
+						"2020-03-12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/orders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "selim",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"ticketNo\":\"123\",\r\n    \"userId\": \"3\",\r\n    \"amount\": \"2\",\r\n    \"sexes\":[\"MALE\",\"FEMALE\"],\r\n    \"nameSurnames\":[\"John\",\"Doe\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/orders/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"orders",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/orders/3/ticketno/123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/orders/3/ticketno/123",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"orders",
+						"3",
+						"ticketno",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/admin/tickets/cancel/123",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ticketStatus\": \"CANCELLED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/admin/tickets/cancel/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"admin",
+						"tickets",
+						"cancel",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/admin/tickets/123",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/admin/tickets/sales/123",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"admin",
+						"tickets",
+						"sales",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/admin/tickets/money/123",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/admin/tickets/money/123",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"admin",
+						"tickets",
+						"money",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/payments/card",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"ticketNo\":\"123\",\r\n    \"userId\": \"3\",\r\n    \"amount\": \"2\",\r\n    \"sexes\":[\"MALE\",\"FEMALE\"],\r\n    \"nameSurnames\":[\"John\",\"Doe\"],\r\n    \"cardNo\": \"1234567\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/payments/card",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"payments",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/orders/trips/3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "selim",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/orders/trips/3",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"orders",
+						"trips",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/tickets/search?departureLocation=Ankara&arrivalLocation=Denizli&departureTime=2020-03-12&arrivalTime=2020-03-12",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "selim",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/tickets/search?departureLocation=Ankara&arrivalLocation=Denizli&departureTime=2020-03-12&arrivalTime=2020-03-12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"tickets",
+						"search"
+					],
+					"query": [
+						{
+							"key": "departureLocation",
+							"value": "Ankara"
+						},
+						{
+							"key": "arrivalLocation",
+							"value": "Denizli"
+						},
+						{
+							"key": "departureTime",
+							"value": "2020-03-12"
+						},
+						{
+							"key": "arrivalTime",
+							"value": "2020-03-12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "selim",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"ticketNo\":\"123\",\r\n    \"userId\": \"3\",\r\n    \"amount\": \"2\",\r\n    \"sexes\":[\"MALE\",\"FEMALE\"],\r\n    \"nameSurnames\":[\"John\",\"Doe\"],\r\n    \"cost\" : \"2000\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "localhost:9090/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

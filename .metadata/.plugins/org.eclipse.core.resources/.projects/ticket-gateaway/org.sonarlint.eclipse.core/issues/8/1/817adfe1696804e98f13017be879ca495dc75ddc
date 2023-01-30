@@ -1,0 +1,11 @@
+
+|
+java:S1192"FDefine a constant instead of duplicating this literal "ADMIN" 4 times.(À ºÐ8’‘«žß0H‹RCRITICALZ
+CODE_SMELL
+w
+java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“8’‘«žß0HRMINORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.( ±´ã8’‘«žß0H‘RMAJORZ
+CODE_SMELL
+w
+java:S5344*">Don't use the default "PasswordEncoder" relying on plain-text.(Ö˜ÔÚ8’‘«žß0H’RCRITICALZVULNERABILITY

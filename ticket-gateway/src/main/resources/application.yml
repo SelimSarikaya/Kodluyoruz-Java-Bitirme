@@ -1,0 +1,16 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: emlakcepte-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ticket-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/orders/**,/users/**,/tickets/**,/admin/**
+        - id: ticket-payment
+          uri: http://localhost:8081
+          predicates:
+            - Path=/payments/**
